@@ -57,7 +57,7 @@ public class Memory {
             if(!gameOver()){
                 System.out.println("Row: (1-4)");
                 int row1 = scanner.nextInt();
-                System.out.println("Column: (1-2)");
+                System.out.println("Column: (1-4)");
                 int column1 = scanner.nextInt();
 
                 if(!board[row1-1][column1-1].equals(" _ ")){
@@ -74,7 +74,7 @@ public class Memory {
 
                 System.out.println("Row: (1-4)");
                 int row2 = scanner.nextInt();
-                System.out.println("Column: (1-2)");
+                System.out.println("Column: (1-4)");
                 int column2 = scanner.nextInt();
 
                 if(!board[row2-1][column2-1].equals(" _ ")){
