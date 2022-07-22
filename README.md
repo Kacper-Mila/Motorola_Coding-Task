@@ -1,2 +1,6 @@
 # Motorola_Coding-Task
- 
+ <h2>Memory project summary</h2>
+ <p>At first i want to apologise. Unfrortunetly, because lack of skill in Java I could not do the task in accordance with the assumptions presented.
+ Thats why there are two versions of this project. First version is an complete and playable project but it misses many of features. This version was made to get an working app witch would be an basis for future implements. Version two was my attempt of trying to get as close as possible to the final product. Unluckly I came across many obsticles.</p>  
+<h3>Why do i code?</h3>
+<p>Coding is my passion for a long time now. I like how I can make a fully working apps from scratch. I can spend much time trying to repair or think how to solve specific problems and when I finally manage them it makes me feel good. I also like it because I see how many programs, apps and websites can be made baetter, starting from small fixes ending on major problems. My mom is an teacher and she needs to work on one of the biggest platforms used to give grades for her students and I saw how many features there need to be done differently to work better. Thats why my main reason to take part in the Motorola Academy is to learn an coding language just beacause I want to make a good programs for others. Next reason is that it would be for me to much easier when I could teach myselfe when there will be an mentor that will show me my misstakes.</p>
