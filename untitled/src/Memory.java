@@ -7,14 +7,16 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Memory {
-    public static String [][] board = new String[4][4];
-    public static String [][] cards = new String [4][4];
+    static int rows;
+    static int columns;
+    public static String [][] board = new String[rows][columns];
+    public static String [][] cards = new String [rows][columns];
     public static Scanner scanner = new Scanner(System.in);
 
     public static void renderBoard(){
-        for(int i = 0; i < 4; i++){
+        for(int i = 0; i < rows; i++){
             System.out.print("|");
-            for(int j = 0; j < 4; j++){
+            for(int j = 0; j < rows; j++){
                 System.out.print(board[i][j]);
                 System.out.print("|");
             }
@@ -43,8 +45,8 @@ public class Memory {
         words.add("H");
 
         int index;
-        for(int i = 0; i < 4; i++){
-            for(int j = 0; j < 4; j++){
+        for(int i = 0; i < rows; i++){
+            for(int j = 0; j < columns; j++){
                 index = random.nextInt(words.size());
                 cards[i][j] = words.get(index);
                 words.remove(index);
@@ -55,9 +57,9 @@ public class Memory {
     public static void checkInput(String [][] cards){
         while(true){
             if(!gameOver()){
-                System.out.println("Row: (1-4)");
+                System.out.println("Row: (1-"+rows+")");
                 int row1 = scanner.nextInt();
-                System.out.println("Column: (1-2)");
+                System.out.println("Column: (1-"+columns+")");
                 int column1 = scanner.nextInt();
 
                 if(!board[row1-1][column1-1].equals(" _ ")){
@@ -72,9 +74,9 @@ public class Memory {
                 }
 
 
-                System.out.println("Row: (1-4)");
+                System.out.println("Row: (1-"+rows+")");
                 int row2 = scanner.nextInt();
-                System.out.println("Column: (1-2)");
+                System.out.println("Column: (1-"+columns+")");
                 int column2 = scanner.nextInt();
 
                 if(!board[row2-1][column2-1].equals(" _ ")){
@@ -106,8 +108,8 @@ public class Memory {
     }
 
     public static boolean gameOver(){
-        for(int i = 0; i < 4; i++){
-            for(int j = 0; j < 4; j++){
+        for(int i = 0; i < rows; i++){
+            for(int j = 0; j < columns; j++){
                 if(board[i][j].equals(" _ ")){
                     return false;
                 }
@@ -118,15 +120,36 @@ public class Memory {
 
     public static void main(String[] args) {
         while(true){
-            System.out.println("Press n for new game or q to quit...");
+            System.out.println("Choose game difficulty (type easy or hard)");
             String nq = scanner.nextLine();
-            if(nq.equals("q")){
-                System.out.println("Closing app...");
-            }else if(nq.equals("n")){
+            if(nq.equals("easy")){
+                rows = 2;
+                columns = 4;
+
+                System.out.println("Gamemode: easy");
+                System.out.println("");
 
                 shuffle();
-                for(int i = 0; i < 4; i++){
-                    for (int j = 0; j < 4; j++) {
+                for(int i = 0; i < rows; i++){
+                    for (int j = 0; j < columns; j++) {
+                        board[i][j] = " _ ";
+                    }
+                }
+
+                renderBoard();
+                checkInput(cards);
+                break;
+
+            }else if(nq.equals("hard")){
+                rows = 4;
+                columns = 4;
+
+                System.out.println("Gamemode: hard");
+                System.out.println("");
+
+                shuffle();
+                for(int i = 0; i < rows; i++){
+                    for (int j = 0; j < columns; j++) {
                         board[i][j] = " _ ";
                     }
                 }
